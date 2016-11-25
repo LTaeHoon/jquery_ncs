@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()  {		
+		$('button').click(function () {
+
+			$.ajax({
+				url: './data/data.xml',
+				type: 'GET',				
+				dataType: 'xml',
+				success: function(data) {
+										
+					// find() : xml tag를 찾는다. 	
+					// <product> name과 price 태그 포함
+					var products = $(data).find('product');							
+					
+					// <product> 태그 수 만큼 반복
+					products.each(function () {
+						// name 태그의 텍스트 저장
+						var name = $(this).find('name').text();
+						// price 태그의 텍스트 저장
+						var price = $(this).find('price').text();
+												
+						// 이름(가격) 형식의 텍스트 대상 h3 태그 적용 
+						$('<h3></h3>').text(name + "(" + price + ")")
+						.appendTo('#result');
+						
+					});
+				}
+			}); 
+			
+		});	
+	});
+</script>
+</head>
+<body>
+	<button>요청</button>
+	<hr />
+	<div id="result"></div>
+	
+</body>
+</html>

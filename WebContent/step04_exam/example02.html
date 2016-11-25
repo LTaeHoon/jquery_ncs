@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트를 사라지게 하기</title>
+<style>
+  span{ display:none} /* 최초 span 내용 감추기 평상시에는 안보이게 하는 속성 */
+</style>
+
+<script src="../js/jquery3.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function() {
+	  // 보이기 클릭 시 -> 안녕하세요. 보이기
+      $("button:eq(0)").click(function () { 
+	        $("span:first").show(); 
+	  });
+      // 감추기 클릭 시 -> 안녕하세요. 감추기
+      $("button:eq(1)").click(function () { 
+		  $("span:first").hide() 
+	  });
+	  
+      // 천천히 보이기 클릭 시 -> 반갑습니다. 보이기
+	  $("button:eq(2)").click(function () { 
+	        $("span:last").show(function() {
+				$(this).css('background', 'green');
+				//$(this).css('color', 'white');
+			}); 
+	  });
+	  // 천천히 감추기 클릭 시 -> 반갑습니다. 감추기
+	  $("button:eq(3)").click(function () { 
+	        $("span:last").hide(function() {
+				$(this).css('background', '');
+			}); 
+	  });	  
+  });
+</script>
+</head>
+<body>  
+  <button>보이기</button> <button>감추기</button> 
+  <span>안녕하세요.</span> <br><br>
+  <button>천천히 보이기</button> <button>천천히 감추기</button>  
+  <span>반갑습니다.</span>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> each() </title>
+
+ <script src="../js/jquery3.js"></script>
+ <script>   
+   $(function(){ 
+	  // $.each() : 배열 원소 처리할 경우 유용한 함수
+	  var site = [ 
+	          {name : 'naver', url : "http://www.naver.com"},  //[0]
+	          {name : 'google', url :"http://www.google.com"}, //[1]
+	          {name : 'daum', url :"http://www.daum.net"}  //[2]
+	        ];
+	  
+	// 1. 배열의 원소 만큼 반복
+	// 형식) $.each(배열명, 무명함수(index, item));	
+    var output = "";
+    $.each(site, function(index, item){      
+      output += '<h2>';	
+      output += '['+ (index+1)+ '] '; // [1] 
+      output += '<a href='+ item.url + '>' + item.name + '</a>'; //<a href ="http://www.naver.com">naver</a>
+      output += '</h2>';      
+    });
+    $('body').html(output);    	
+   });	    
+ </script>
+</head>
+<body>
+ 
+</body>
+</html>
+
+
+

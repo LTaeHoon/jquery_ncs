@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+
+$(function() {		
+		
+		// 이벤트 전달 				
+		$('a').click(function() {
+			$(this).css('background-color', 'red');
+					
+			return false; // 1. 하이퍼링크 기능 차단
+			// return true; 또는 return; // 이벤트 전달			
+		});
+		
+		// 2. 차단 대상 
+		$('h1').click(function() {
+			$(this).css('background-color', 'orange');
+		});
+		
+	});
+</script>
+</head>
+<body>
+	
+<h1><a href="http://www.naver.com">네이버</a></h1>
+	
+</body>
+</html>

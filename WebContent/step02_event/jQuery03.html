@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+
+$(function() {		
+	
+		// preventDefault() : 태그의 기본 이벤트 제거
+		$('a').click(function(e) { // e : 이벤트 발생 객체
+			e.preventDefault(); // a 태그 링크 기능 제거
+		});
+		
+		// 클릭 시 배경색 변경으로 기본 이벤트 변경
+		$('h1').click(function() {
+			$(this).css('background-color', 'orange');
+		});
+		
+	});
+</script>
+</head>
+<body>
+	
+<h1><a href="http://www.naver.com">네이버</a></h1>
+	
+</body>
+</html>

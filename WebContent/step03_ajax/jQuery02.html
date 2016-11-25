@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()  {		
+		$('button').click(function () {
+			// 외부 서버의 xml 문서와 비동기 통신	
+			// http://maps.googleapis.com/maps/api/geocode/xml?address=Seoul&sensor=false
+ 			$.ajax({
+				//요청URL
+				url: 'http://maps.googleapis.com/maps/api/geocode/xml',
+				//get 방식 : 전송할 데이터가 url에 노출되어 전송하는 방식
+				type: 'GET',
+				//url에 보낼 데이터(파라미터) 
+				data: {					
+					address : '서초구',
+					//address : '서울시청', //?address='서울시청'
+					sensor: 'true' //&sensor=false
+				},   
+				// 데이터의 형태 - 생략시에는 자동판단 
+				dataType: 'TEXT',
+				// 요청성공시 
+				success: function(data) {
+					//alert(data)
+					$('#result').append(data);
+				}
+			});
+			            
+		});	
+	});
+</script>
+</head>
+<body>
+	<button>요청</button>
+	<hr />
+	<div id="result"></div>
+	
+</body>
+</html>

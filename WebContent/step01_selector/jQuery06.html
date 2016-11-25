@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>first(), appendTo()</title>
+<script src="../js/jquery3.js"></script>
+<script>   
+   $(function(){
+	  $('img').css('width', '100px'); 
+	  
+	  var id = setInterval(function(){ // 이미지 이동
+		  $('img').first().appendTo('body'); // 첫번째 요소를 뒤로 추가 
+	  }, 2000); 
+	  
+	  setTimeout(function(){ // 10초 후 정지
+		  clearInterval(id);
+	  }, 10000); 
+	  
+   }); 
+ </script>
+</head>
+<body>
+ 
+ <img src="../images/image1.jpg"/>
+ <img src="../images/image2.jpg"/>
+ <img src="../images/image3.jpg"/>
+ <img src="../images/image4.jpg"/>
+ <img src="../images/image5.jpg"/>
+ <img src="../images/image6.jpg"/>
+ 
+</body>
+</html>

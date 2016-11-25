@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 필터 선택자(selected, checked), 속성 선택자 </title>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/*
+			필터선택자 : $('선택자:속성값').함수()
+			- 특정 선택자의 속성값으로 필터하는 역할
+			ex) $('#gender:checked').val(); //선택된 성별 추출
+		*/
+		//선택된 성별의 value값 추출
+		var gender = $('#gender:checked').val();
+		alert(gender);
+		//하위 엘리먼트의 value값 추출 : 부모>자식:속성값
+		var sel = $('#s1 > option:selected').val();
+		alert(sel);
+		
+		/*
+			속성 선택자: $('태그[속성='값']')
+			<input type ="값":text,password,submit,reset
+			ex) $('input[type="text"]');
+		*/
+		$('input[type="text"]').val(sel); //텍스트 상자에 선택된 동물 출력
+	});
+</script>
+</head>
+<body>
+  <form name="frm">
+    <select name="s1" id="s1">
+       <option value="사자">Lion </option>
+       <option value="호랑이">Tiger </option>
+       <option value="고양이">Cat </option>
+       <option value="강아지">Dog </option>    
+    </select> 
+    성별 :
+   <input type="radio" name="gender" id="gender" checked value="남자"> 남자
+   <input type="radio" name="gender" id="gender" value="여자"> 여자   
+   선택 동물 :
+   <input type="text"/>   
+   <hr>
+   <input type="button" id="btn" value="선택"/>
+  </form>
+</body>
+</html>
+
+
+
+
+
+

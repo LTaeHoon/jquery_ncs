@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>toggle, show, hide</title>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+
+  $(function() {		
+					
+		$('#toggle').click(function () {
+			$('.page').toggle();
+			// toggle = show or hide		
+		});		
+		$('#show').click(function () {
+			$('.page').show();
+		
+		});		
+		$('#hide').click(function () {
+			$('.page').hide();
+		
+		});
+	});
+</script>
+</head>
+<body>
+	
+<button id="toggle"> Toggle show </button>
+<button id="show"> Show </button>
+<button id="hide"> Hide </button>
+ <div class="page">
+ 	<h1> Page Title </h1>
+	<p>페이지 내용 페이지 내용 페이지 내용 </p> 	
+ </div>
+	
+</body>
+</html>

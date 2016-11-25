@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+
+  $(function() {		
+				
+		// 선택자에 동적으로 이벤트가 적용될 태그 등록 
+		// on('event', 'tag', func());
+		$('#wrap').on('click','h1',function () { // h1 클릭 시 함수 호출
+			var length = $('h1').length; // 'h1' 태그 수 리턴
+			
+			var targetHTML = $(this).html(); // h1 태그 내용
+			$('#wrap').append('<h1>' + length + ' - ' + targetHTML + '</h1>');
+			// 클릭 시  "숫자 - Header" 형식으로 내용 추가
+		});
+	});
+</script>
+</head>
+<div id="wrap">
+	<h1>Header</h1>
+</div>
+	
+</body>
+</html>

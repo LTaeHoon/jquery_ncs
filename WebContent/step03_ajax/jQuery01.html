@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()  {		
+		$('button').click(function () {				
+			// ajax() 이용 html 문서 통신
+			$.ajax({
+				// 요청 URL
+				url: 'data/data.html',
+				// 전송방식(GET/POST)				
+			  	//type: 'GET',		//파라미터가 url에 노출
+			  	type: 'POST',		//파라미터가 url에 노출되지 않음	  	
+			  	// 데이터 유형(생략시 자동 판단)
+			  	dataType: 'html',
+			  	// 요청 성공시 result에 data 추가
+				success: function (data) {
+					$('#result').append(data);
+				}
+			});			
+		});	
+	});
+</script>
+</head>
+<body>
+	<button>요청</button>
+	<hr />
+	<div id="result"></div>
+	
+</body>
+</html>

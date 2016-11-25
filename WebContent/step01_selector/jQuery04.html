@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>text(), html(), remove(), empty()</title>
+ <script src="../js/jquery3.js"></script>
+ <script>   
+   $(function(){ 
+	  $('h2').html('<i> Hello, jQuery </i>'); // h1에 내용을 삽입
+	  $('h3').text('<i> Hello, jQuery </i>'); // text로 삽입
+	  
+	  $('#h2').click( function(){ // h1 버튼 클릭 시
+		  $('h2').remove(); // 엘리먼트 제거
+	  });	  
+	  $('#h3').click( function(){ // h3 버튼 클릭 시
+		  $('h3').remove();
+	  });
+	  $('#all').click( function(){ // all 버튼 클릭 시
+		  $('div').empty(); //empty 하위 엘리먼트 제거 함수
+	  });
+	    
+   }); 
+ </script>
+</head>
+<body>
+ <div> <!-- 블럭형 태그를 담을 수 있는 컨테이너 역할 -->  
+  <h2> </h2>
+    
+  <h3> </h3>
+ </div>
+ 
+  <hr>
+  <input type="button" value="h2" id="h2"/>
+  <input type="button" value="h3" id="h3"/>
+  <input type="button" value="all" id="all"/>
+</body>
+</html>
+
+
+
+
+
+

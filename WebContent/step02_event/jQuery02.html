@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery3.js"></script>
+<script type="text/javascript">
+
+  $(function() {		
+	    // 첫번째 h1에 * 출력 
+		$('h1').css('cursor','pointer').click(function () {			
+			//$('h1').append('*');
+			$(this).append('*'); // $(this) : 선택된 h1 태그 객체
+		});
+        
+	    // 2초 단위로 click 이벤트 강제 발생
+		setInterval(function () {   //first():첫번째, last():마지막
+			$('h1').last().trigger('click'); // 마지막 h1 태그 적용   trigger : 강제적으로 이벤트를 발생하고자 할때 사용 trigger('이벤트')
+		}, 2000);
+		
+	});
+</script>
+</head>
+<body>
+	
+<h1>start : </h1>
+<h1>start : </h1>
+	
+</body>
+</html>

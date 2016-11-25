@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>append(), appendTo()</title>
+ <script src="../js/jquery3.js"></script>
+ <script>   
+   $(function(){ 
+	  /* 선택자에 tag 추가 방법(2) */
+	  // 방법1) $('선택자').append(tag) : 선택자에 tag 추가
+	  // 방법2) $('선택자').appendTo(tag) : tag에 선택자 추가
+	  
+	  // 방법1) body에 태그를 추가
+	  var h1 = '<h1> 안녕 jQuery1 </h1>';
+	  var h2 = '<h2> 안녕 jQuery2 </h2>';
+	  $('body').append(h1, h2); // 변수를 tag에 추가
+	  
+	  var h3 = '<h3> 안녕, jQuery3 </h3>';
+	  // 방법2) body에 태그를 추가
+	  $(h3).appendTo('body'); 
+	  
+	  
+   }); 
+ </script>
+</head>
+<body>
+  
+</body>
+</html>
+
+
+
